@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +11,15 @@ import { Component } from '@angular/core';
             </div>
             <ul class="nav navbar-nav">
                 <li>
-                    <a routerLink="/Home" routerLinkActive="active">Home</a>
+                    <a routerLink="/Home" *ngIf="authService.authenticated" routerLinkActive="active">Home</a>
                 </li>
                 <li>
-                    <a routerLink="/Profile" routerLinkActive="active">Profile</a>
+                    <a routerLink="/Profile"  *ngIf="authService.authenticated" routerLinkActive="active">Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a>Log Out</a>
+                    <a (click)="authService.logout()" *ngIf="authService.authenticated" >Log Out</a>
                 </li>
             </ul>
         </nav>
