@@ -37,6 +37,8 @@ export class AuthService {
     login() {
         this.auth0.authorize();
     }
+    
+    logout() {}
 
     get authenticated(): boolean {
         // placeholder while building ui
