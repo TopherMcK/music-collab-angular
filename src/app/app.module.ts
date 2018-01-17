@@ -4,11 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { FindCollabComponent } from './find-collab/find-collab.component';
+import { CallbackComponent } from './callback.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FindCollabComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
