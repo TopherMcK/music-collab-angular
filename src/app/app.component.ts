@@ -4,17 +4,17 @@ import { AuthService } from './auth/auth.service';
 @Component({
   selector: 'app-root',
   template: `
-    <div *ngIf="false" class="container">
-        <nav class="navbar navbar-default">
+    <div class="default_Grid">
+        <nav *ngIf="false" class="navbar navbar-default">
             <div class="navbar-header">
                 <a class="navbar-brand" routerLink="/dashboard"></a>
             </div>
             <ul class="nav navbar-nav">
                 <li>
-                    <a *ngIf="false">Home</a>
+                    <a>Home</a>
                 </li>
                 <li>
-                    <a *ngIf="false">Profile</a>
+                    <a>Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -24,6 +24,7 @@ import { AuthService } from './auth/auth.service';
             </ul>
         </nav>
         <div class="col-sm-12">
+    <router-outlet></router-outlet>
         </div>
     </div>
     `,
