@@ -4,7 +4,7 @@ import { AuthService } from './auth/auth.service';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="container">
+    <div *ngIf="false" class="container">
         <nav class="navbar navbar-default">
             <div class="navbar-header">
                 <a class="navbar-brand" routerLink="/dashboard"></a>
