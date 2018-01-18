@@ -4,9 +4,18 @@ import { AuthService } from './auth/auth.service';
 @Component({
   selector: 'app-root',
   template: `
-    <div *ngIf="false" class="container">
-        <nav class="navbar navbar-default">
-            <div class="navbar-header">
+    <div class="default_Grid">
+
+        <h1 class="logo">Musicollab</h1>
+
+        <input type="text" name="username" class="input"/>
+
+        <input type="password" name="password" class="input"/>
+
+        <input type="button" value="Login" name="Login" class="button">
+
+        <nav *ngIf="false" class="navbar navbar-default">
+            <div class="default_grid">
                 <a class="navbar-brand" routerLink="/dashboard"></a>
             </div>
             <ul class="nav navbar-nav">
