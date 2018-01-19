@@ -5,7 +5,7 @@ import { AuthService } from './auth/auth.service';
   selector: 'app-root',
   template: `
     <div class="default_Grid">
-
+TEST
         <h1 class="logo">Musicollab</h1>
 
         <input type="text" name="username" class="input"/>
