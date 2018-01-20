@@ -33,6 +33,7 @@ TEST
             </ul>
         </nav>
         <div class="col-sm-12">
+<router-outlet></router-outlet>
         </div>
     </div>
     `,

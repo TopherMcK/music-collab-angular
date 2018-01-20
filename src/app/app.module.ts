@@ -8,13 +8,15 @@ import { FindCollabComponent } from './find-collab/find-collab.component';
 import { CallbackComponent } from './callback.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FindCollabComponent,
-    CallbackComponent
+    CallbackComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
