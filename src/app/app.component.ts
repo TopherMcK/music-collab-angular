@@ -5,14 +5,23 @@ import { AuthService } from './auth/auth.service';
   selector: 'app-root',
   template: `
     <div class="default_Grid">
-TEST
         <h1 class="logo">Musicollab</h1>
 
-        <input type="text" name="username" class="input"/>
+        <span class="welcomeMsg">
+            Hi, welcome to Musicollab! An social community made of musicians looking for others to jam out with. Please begin by logging in or Signing up!
+        </span>
 
-        <input type="password" name="password" class="input"/>
+        <div class="containerUser">
+            <p class="errorMsgPw">Error Message</p>
+            Username: <input type="text" name="password" class="password"/>
+        </div>
 
-        <input type="button" value="Login" name="Login" class="button">
+        <div class="containerPass">
+            <p class="errorMsgUsr">Error Message</p>
+            Password: <input type="password" name="username" class="username"/>
+        </div>
+
+        <input type="button" value="Login" name="Login" class="submitButton">
 
         <nav *ngIf="false" class="navbar navbar-default">
             <div class="default_grid">
