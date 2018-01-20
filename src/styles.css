@@ -9,15 +9,12 @@ Directory:
 -Core Assets
 	-Custom Fonts
 	-DEV
+	-Default CSS Override
 	-Core Features
 
 -Login Screen
 
 **/
-*
-{
-	background-color: #baffc9;
-}
 
 
 /**-----------------------------/**
@@ -38,15 +35,140 @@ Directory:
 	display: none;
 }
 
+.deQueen
+{
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
+}
+
+.dewai, .dewai2, .dewai3, .dewai4, .dewai5, .dewai6,
+.dewai7, .dewai8, .dewai9, .dewai10, .dewai11, .dewai12
+{
+	bottom: 0;
+	right: 1px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	animation-name: douknodewai;
+	animation-duration: 6s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	opacity: 0;
+	color: #000;
+	text-shadow: 0px 3px 0 #fff, 0px -3px 0 #fff,
+	3px 0px 0 #fff, -3px 0px 0 #fff, 3px 3px 0 #fff, -3px -3px 0 #fff;
+}
+
+.dewai
+{
+	animation-delay: 1s;
+}
+.dewai2
+{
+	animation-delay: 4s;
+}
+.dewai3
+{
+	animation-delay: 2s;
+}
+.dewai4
+{
+	animation-delay: 1.3s;
+}
+.dewai5
+{
+	animation-delay: 2.5s;
+}
+.dewai6
+{
+	animation-delay: 3s;
+}
+.dewai7
+{
+	animation-delay: 0.5s;
+}
+.dewai8
+{
+	animation-delay: 1.8s;
+}
+.dewai9
+{
+	animation-delay: 2.3s;
+}
+.dewai10
+{
+	animation-delay: 3.5s;
+}
+.dewai11
+{
+	animation-delay: 4.9s;
+}
+.dewai12
+{
+	animation-delay: 5.9s;
+}
+
+@keyframes douknodewai
+{
+
+	from{transform: translateX(0vw);}
+	to{transform: translateX(-1500px); opacity: 1;}
+
+
+}
+
+/** Default CSS Override **/
+
+*
+{
+	/*background-color: #baffc9;*/
+	transition: 0.5s;
+}
+
+html, body
+{
+	margin: 0;
+	height: 100%;
+}
+
+body
+{
+	height:100%;
+	width: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e7ffaf+0,ffff99+100 */
+	background: #e7ffaf; /* Old browsers */
+
+	background: -moz-linear-gradient(top, #e7ffaf 0%, #ffff99 100%) no-repeat; /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #e7ffaf 0%,#ffff99 100%) no-repeat; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #e7ffaf 0%,#ffff99 100%) no-repeat; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7ffaf', endColorstr='#ffff99',GradientType=0 ) no-repeat; /* IE6-9 */
+}
 
 /** Core Features **/
 .logo
 {
 	font-family: 'Pacifico', cursive;
+	max-height: 30px;
+	margin: 0 !important;
+	align-self: center;
 	font-weight: 900;
 	font-size: 4em;
 	text-align: center;
 	grid-area: logo;
+	color: #fff;
+	text-shadow: 0px 3px 0 #596E7F, 0px -3px 0 #596E7F,
+	3px 0px 0 #596E7F, -3px 0px 0 #596E7F, 3px 3px 0 #596E7F, -3px -3px 0 #596E7F;
+}
+
+h1.logo:hover
+{
+	color: #4D737B;
+	text-shadow: 0px 3px 0 #212E35, 0px -3px 0 #212E35,
+	3px 0px 0 #212E35, -3px 0px 0 #212E35, 3px 3px 0 #212E35, -3px -3px 0 #212E35;
 }
 
 input
@@ -54,9 +176,16 @@ input
 	border-radius: 10px;
 	border: 2px solid #acd698;
 	width: 100%;
+	padding: 5px;
 }
 
-.errorMsgUsr, .errorMsgPw
+input:focus
+{
+	outline: none;
+	box-shadow: 0 0 15px #FFC912;
+}
+
+.errorMsg
 {
 	color: #FF0000;
 	font-family: 'Antic', sans-serif;
@@ -65,33 +194,39 @@ input
 	display: none; /*This will need to get updated TODO*/
 }
 
+.footer
+{
+	width: 100%;
+	height: 100px;
+	background-color: #acd698;
+	grid-area: footer;
+	bottom: 10px;
+	max-height: 100px;
+}
+
 
 /**-----------------------------/**
 /	  LoginScreen		/
 /**---------------------------**/
 
-p _ngcontent-c1
-{
-	display: none;
-}
-
 .default_Grid /*Grid container*/
 {
 	display: grid;
 	grid-gap: 5px;
+	height: 100%;
 	grid-template-columns: 1fr 2fr 1fr;
-	grid-auto-rows: auto;
+	grid-auto-rows: auto auto 100px;
 	grid-template-areas:
-	"logo logo logo"
+	". logo ."
 	"welcomeMsg welcomeMsg welcomeMsg"
 	". username ."
 	". password ."
-	". submit .";
+	". submit ."
+	"footer footer footer";
 }
 
 .username, .password
 {
-	max-height: 40px;
 	background-color: #eee;
 	font-size: 200%;
 }
@@ -99,11 +234,13 @@ p _ngcontent-c1
 .containerUser
 {
 	grid-area: username;
+	max-height: 40px;
 }
 
 .containerPass
 {
 	grid-area: password;
+	max-height: 40px;
 }
 
 .submitButton
@@ -119,6 +256,7 @@ p _ngcontent-c1
 	grid-area: welcomeMsg;
 	color: #fff;
 	text-align: center;
+	align-self: center;
 	padding: 10px;
 	font-size: 130%;
 	width: 100%;
